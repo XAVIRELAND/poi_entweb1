@@ -1,0 +1,170 @@
+
+<section class="ui  raised segment">
+<div class="ui grid">
+    <div class="four wide yellow column">
+        <h2 class="ui header">Irish Lighthouses</h2>
+        <div class="ui inverted vertical menu">
+            <div class="item">
+             County Antrim<select class="ui tiny search dropdown">
+                    <option value="">Co. Antrim</option>
+                    <option value="AL">Rathlin West</option>
+                    <option value="AK">Rathlin East</option>
+                    <option value="AZ">Rue Point</option>
+                    <option value="AR">Maidens</option>
+                    <option value="CA">Chain Memorial</option>
+                    <option value="CO">Blackhead</option>
+
+                </select>
+            </div>
+
+            <div class="item">
+                County Down<select class="ui tiny search dropdown">
+                <option value="">Co. Down</option>
+                <option value="AL">Haulbowline</option>
+                <option value="AK">Vidal Bank</option>
+                <option value="AZ">Green Island</option>
+                <option value="AR">Donaghadee</option>
+                <option value="CA">St John's Point</option>
+                <option value="CO">Mew island</option>
+                <option value="CT">Angus Rock</option>
+
+            </select>
+            </div>
+            <div class="item">
+                Co. Donegal<select class="ui tiny search dropdown">
+                <option value="">Co. Donegal</option>
+                <option value="AA">Ballagh Rocks</option>
+                <option value="AL">Arranmore</option>
+                <option value="AK">Buncrana</option>
+                <option value="AZ">St John's Point</option>
+                <option value="AR">Dunree</option>
+                <option value="AR">Fanad Head</option>
+                <option value="AK">Rathlin O'Birne</option>
+                <option value="AZ">Inishowen</option>
+                <option value="AR">inishrahull</option>
+                <option value="AR">Rotten Island</option>
+                <option value="AR">Tory Island</option>
+
+            </select>
+            </div>
+            <div class="item">
+                County Dublin<select class="ui tiny search dropdown">
+                <option value="">Co. Dublin</option>
+                <option value="AL">Muglins</option>
+                <option value="AK">Dún Laoghaire East</option>
+                <option value="AZ">Baily</option>
+                <option value="AR">Howth</option>
+                <option value="CA">Kish</option>
+                <option value="CO">Rockabill</option>
+                <option value="CO">Wicklow Head</option>
+
+            </select>
+            </div>
+            <div class="item">
+                Waterford and Wexford<select class="ui tiny search dropdown">
+                <option value="">WW & WX</option>
+                <option value="AL">Ballinacourly Point</option>
+                <option value="AK">Dunmore East</option>
+                <option value="AZ">Mine Head</option>
+                <option value="AR">Hook</option>
+                <option value="CA">Tuskar Rock</option>
+
+            </select>
+            </div>
+            <div class="item">
+                Co. Cork<select class="ui tiny search dropdown">
+                <option value="">Co. Cork</option>
+                <option value="AL">Ballicotton</option>
+                <option value="AK">Ardnakinna Point</option>
+                <option value="AZ">Bull Rock</option>
+                <option value="AR">Castletownbere</option>
+                <option value="CA">Charlestford</option>
+                <option value="AL">Roche's Point</option>
+                <option value="AK">Crookhaven</option>
+                <option value="AZ">Fastnet</option>
+                <option value="AR">Galley head </option>
+                <option value="CA">Copper Point</option>
+                <option value="AL">Mizen Head</option>
+                <option value="AK">Old Head of kinsale</option>
+                <option value="AZ">Roancarrigmore</option>
+                <option value="AR">Sheep's Head</option>
+                <option value="CA">Youghal</option>
+
+            </select>
+            </div>
+            <div class="item">
+                Co. kerry<select class="ui tiny search dropdown">
+                <option value="">Co. Kerry</option>
+                <option value="">Little Samphire Island</option>
+                <option value="AL">Skelligs</option>
+                <option value="AK">Inishtearaght</option>
+                <option value="AZ">Valentia</option>
+                <option value="AR">Cromwell Point</option>
+
+            </select>
+            </div>
+            <div class="item">
+                Co. Galway<select class="ui tiny search dropdown">
+                <option value="">Co. Galway</option>
+                <option value="AA">Straw Island</option>
+                <option value="AL">Eeragh</option>
+                <option value="AK">Cashla</option>
+                <option value="AZ">Inisheer</option>
+                <option value="AR">Slyne Head</option>
+
+            </select>
+            </div>
+            <div class="item">
+                Co. Mayo<select class="ui tiny search dropdown">
+                <option value="">Co. Mayo</option>
+                <option value="AA">Achillbeg</option>
+                <option value="AL">Balckrock Mayo</option>
+                <option value="AK">Blacksod</option>
+                <option value="AZ">Broadhaven</option>
+                <option value="AR">Inisgort</option>
+                <option value="AR">Eagle Island</option>
+
+            </select>
+            </div>
+            <div class="item">
+                Co. Sligo<select class="ui tiny search dropdown">
+                <option value="">Co. Sligo</option>
+                <option value="AA">Oyster Island</option>
+                <option value="AL">Metal Man Sligo</option>
+                <option value="AK">Lower Roses</option>
+                <option value="AZ">Black Rock Sligo</option>
+
+
+            </select>
+            </div>
+
+        </div>
+    </div>
+    <div class="twelve wide yellow column">
+        {{>mainmenu _id="poi"}}
+        <iframe width="700" height="400" src="https://data.gov.ie/dataset/commissioners-of-irish-lights-lighthouse/resource/c1ca0e34-5c10-49cf-bf33-bafff2789139/view/a8d1d150-becf-45da-bed1-d5b3e57840f9" frameBorder="0"></iframe>
+        <div id="mapdiv" style="width:auto; height:610px"></div>
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+    <script>
+        map = new OpenLayers.Map("mapdiv");
+        map.addLayer(new OpenLayers.Layer.OSM());
+
+        var lonLat = new OpenLayers.LonLat(-9.705,51.477)
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+            );
+
+        var zoom=7;
+
+        var markers = new OpenLayers.Layer.Markers( "Markers" );
+        map.addLayer(markers);
+
+        markers.addMarker(new OpenLayers.Marker(lonLat));
+
+        map.setCenter (lonLat, zoom);
+    </script>
+</div>
+</div>
+</div>
+</section>

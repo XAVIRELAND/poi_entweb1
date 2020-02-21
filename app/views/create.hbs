@@ -1,0 +1,39 @@
+{{>mainmenu}}
+<section class="ui inverted yellow  segment">
+    <div class="ui form">
+        <form action="/create" method="POST">
+        <div class="ui two column grid">
+            <div class="column">
+        <h2 class="ui dividing header">Create a new POI</h2>
+        <div class="field">
+            <div class=" field">
+                <label>Poi Name</label>
+                <input type="text" placeholder="Poi Name" name="Poi Name">
+            </div>
+            <div class="ten wide field">
+            <label>Coordinates</label>
+            <input type="text" placeholder="Coordinates" name="Coordinates">
+            </div>
+            <div class="eight wide field">
+                <label>County</label>
+                <input type="text" placeholder="County" name="County">
+            </div>
+            <div class="field">
+                <label>Description</label>
+                <input type="text" placeholder="" name="Description">
+                <textarea></textarea>
+            </div>
+            <button class="ui blue big submit button">Create Poi</button>
+        </div>
+            </div>
+            <div class="left floated column" >
+                <img src="images/lighthouse2.jpg" height="460" width="500"/>
+            </div>
+
+        </div>
+
+        </form>
+    </div>
+
+</section>
+

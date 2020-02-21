@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <meta charset="UTF-8"/>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.3/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.3/dist/semantic.min.js"></script>
+</head>
+<body>
+<section class="ui container">
+    <nav class="ui inverted menu">
+        <header class="header item"><a href="/poi">Pois</a></header>
+        <div class="right menu">
+            <a class="item" href="/signup"> Signup</a> <a class="item" href="/"> Login</a>
+        </div>
+    </nav>
+    <section class="ui two column yellow inverted raised segment">
+        <div class="ui grid">
+            <div class="ui ten wide column">
+                <div class="ui inverted black stacked fluid form segment">
+                    <form action="/signup" method="POST">
+                        <h3 class="ui header">Register</h3>
+                        <div class="two fields">
+                            <div class="field">
+                                <label>First Name</label> <input placeholder="First Name" type="text" name="firstName"/>
+                            </div>
+                            <div class="field">
+                                <label>Last Name</label> <input placeholder="Last Name" type="text" name="lastName"/>
+                            </div>
+                        </div>
+                        <div class="field"><label>Email</label> <input placeholder="Email" type="text" name="email"/></div>
+                        <div class="field"><label>Password</label> <input type="password" name="password"/></div>
+                        <button class="ui blue submit button">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <aside class="ui five wide column"><img
+                    src="images/lighthouse3.jpg"height="320" width="340"/></aside>
+        </div>
+    </section>
+</section>
+</body>
+</html>
