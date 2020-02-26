@@ -1,23 +1,28 @@
-<nav class="ui inverted massive menu">
+<nav>
+
+<div class="ui inverted massive menu">
     <div class="ui dropdown item">
         Manage pois <i class="dropdown icon"></i>
         <div class="menu">
             <a class="item" href="/create">Create poi</a>
             <a class="item">Update poi</a>
             <a class="item">Delete poi</a>
+            <a class="item" href="/poireport">Poi report</a>
         </div>
     </div>
     <div class="right menu">
         <a class="active item" href="/poi">
             Home
         </a>
-        <a class="item" href="/signup">
-            Update Details
+        <a class="item" href="/settings">
+            Settings
         </a>
         <a class="item" href="/">
             Sign Out
         </a>
     </div>
+        </div>
+
 </nav>
 <script>
     $("#{{_id}}").addClass("active item");

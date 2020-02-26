@@ -6,8 +6,10 @@ module.exports = [
     { method: 'GET', path: '/signup', config: Accounts.showSignup },
     { method: 'GET', path: '/create', config: Pois.showCreate },
     { method: 'GET', path: '/poi', config: Pois.poi },
+    { method: 'GET', path: '/settings', config: Accounts.showSettings },
+    { method: 'POST', path: '/settings', config: Accounts.updateSettings },
 
-    { method: 'POST', path: '/', config: Accounts.login },
+    { method: 'POST', path: '/login', config: Accounts.login },
     { method: 'POST', path: '/signup', config: Accounts.signup },
     { method: 'POST', path: '/create', config: Pois.create },
     { method: 'GET', path: '/poireport', config: Pois.report },

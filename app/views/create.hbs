@@ -8,31 +8,33 @@
         <div class="field">
             <div class=" field">
                 <label>Poi Name</label>
-                <input type="text" placeholder="Poi Name" name="Poi Name">
+                <input type="text" placeholder="Poi Name" name="name">
             </div>
-            <div class="ten wide field">
-            <label>Coordinates</label>
-            <input type="text" placeholder="Coordinates" name="Coordinates">
+            <div class=" field">
+            <label>Latitude</label>
+            <input placeholder="Latitude" name="latitude">
+            </div>
+            <div class=" field">
+                <label>Longitude</label>
+                <input placeholder="Longitude" name="longitude">
             </div>
             <div class="eight wide field">
                 <label>County</label>
-                <input type="text" placeholder="County" name="County">
+                <input type="text" placeholder="County" name="county">
             </div>
-            <div class="field">
+            <div class="field" >
                 <label>Description</label>
-                <input type="text" placeholder="" name="Description">
-                <textarea></textarea>
+                <textarea type="text" name="description"></textarea>
             </div>
             <button class="ui blue big submit button">Create Poi</button>
         </div>
             </div>
             <div class="left floated column" >
-                <img src="images/lighthouse2.jpg" height="460" width="500"/>
+                <img src="images/lighthouse7.jpg" class="ui large image"/>
             </div>
-
         </div>
-
         </form>
+        {{> error}}
     </div>
 
 </section>

@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{title}}</title>
-    <meta charset="UTF-8"/>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.3/dist/semantic.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.3/dist/semantic.min.js"></script>
-</head>
-<body>
+
 <section class="ui container">
     <nav class="ui inverted menu">
         <header class="header item"><a href="/poi">Pois</a></header>
@@ -32,6 +23,7 @@
                         <div class="field"><label>Email</label> <input placeholder="Email" type="text" name="email"/></div>
                         <div class="field"><label>Password</label> <input type="password" name="password"/></div>
                         <button class="ui blue submit button">Submit</button>
+                        {{> error }}
                     </form>
                 </div>
             </div>
@@ -40,5 +32,3 @@
         </div>
     </section>
 </section>
-</body>
-</html>
