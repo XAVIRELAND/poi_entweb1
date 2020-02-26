@@ -3,102 +3,29 @@
         <div class="ui grid">
             <div class="four wide yellow column">
                 <h2 class="ui header">Irish Lighthouses</h2>
-                {{#each counties}}
-
-                <div class="ui inverted vertical menu">{{this}}
-                    {{#each../lighthouses}}
+             {{#each lighthouses}}
+                <div class="ui inverted vertical menu">
+                    {{this._id}}
                     <div class="item">
                         <div class="header"></div>
                         <div class="menu">
-                            <a class="item">{{this}}</a>
+                            {{#each this.pois}}
+                                <a class="item">{{this}}</a>
+                            {{/each}}
                         </div>
                     </div>
-                    {{/each}}
+
                 </div>
-                    {{/each}}
+              {{/each}}
             </div>
             <div class="twelve wide yellow column">
                 {{>mainmenu _id="poi"}}
                 <div>
                 <body onload="initialize_map();
-                add_map_point(51.447, -9.705);
-                add_map_point(51.45, -9.82);
-                add_map_point(51.653, -9.747);
-                add_map_point(51.647, -9.905);
-                add_map_point(51.618, -9.918);
-                add_map_point(51.543, -9.849);
-                add_map_point(51.592, -10.301);
-                add_map_point(51.768, -10.307);
-                add_map_point(51.934, -10.321);
-                add_map_point(52.076, -10.661);
-                add_map_point(52.271, -9.882);
-                add_map_point(52.606, -9.518);
-                add_map_point(51.628, -9.589);
-                add_map_point(52.618, -9.906);
-                add_map_point(51.561, -9.932);
-                add_map_point(53.047, -9.527);
-                add_map_point(53.154, -9.264);
-                add_map_point(53.264, -9.964);
-                add_map_point(53.118, -9.631);
-                add_map_point(51.148, -9.857);
-                add_map_point(51.447, -9.705);
-                add_map_point(53.4, -10.234);
-                add_map_point(53.858, -9.947);
-                add_map_point(54.099, -10.06);
-                add_map_point(54.068, -10.321);
-                add_map_point(54.284, -10.093);
-                add_map_point(54.268, -9.889);
-                add_map_point(54.302, -8.571);
-                add_map_point(54.304, -8.576);
-                add_map_point(54.329, -8.573);
-                add_map_point(54.308, -8.618);
-                add_map_point(54.615, -8.441);
-                add_map_point(54.569, -8.461);
-                add_map_point(54.664, -8.883);
-                add_map_point(54.999, -8.481);
-                add_map_point(55.015, -8.561);
-                add_map_point(55.273, -8.249);
-                add_map_point(55.127, -7.465);
-                add_map_point(55.198, -7.554);
-                add_map_point(55.276, -7.244);
-                add_map_point(55.226, -6.929);
-                add_map_point(55.301, -6.281);
-                add_map_point(55.302, -6.172);
-                add_map_point(55.259, -6.191);
-                add_map_point(54.929, -5.728);
-                add_map_point(54.855, -5.798);
-                add_map_point(54.767, -5.689);
-                add_map_point(54.699, -5.514);
-                add_map_point(54.645, -5.531);
-                add_map_point(54.331, -5.525);
-                add_map_point(54.227, -5.66);
-                add_map_point(54.033, -6.096);
-                add_map_point(54.03, -6.091);
-                add_map_point(54.02, -6.079);
-                add_map_point(53.976, -6.295);
-                add_map_point(53.597, -6.005);
-                add_map_point(53.394, -6.067);
-                add_map_point(53.632, -6.053);
-                add_map_point(53.303, -6.127);
-                add_map_point(53.311, -5.926);
-                add_map_point(52.966, -5.998);
-                add_map_point(52.203, -6.207);
-                add_map_point(52.149, -6.99);
-                add_map_point(54.124, -6.93);
-                add_map_point(52.078, -7.553);
-                add_map_point(51.993, -7.587);
-                add_map_point(51.943, -7.842);
-                add_map_point(51.825, -7.986);
-                add_map_point(51.793, -8.255);
-                add_map_point(51.605, -8.534);
-                add_map_point(51.53, -8.954);
-                add_map_point(51.504, -9.534);
-                add_map_point(51.389, -9.603);
 
-
-
-
-">
+                {{#each coordinates}}
+                    add_map_point({{this.latitude}}, {{this.longitude}})
+                {{/each}}">
 
                 <div id="map" style="width: auto; height: 100vh;"></div>
                 </body>

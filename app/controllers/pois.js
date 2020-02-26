@@ -5,17 +5,16 @@ const Pois = {
     poi: {
         auth: false,
         handler: async function(request, h) {
-            const counties = await Poi.find().distinct("county").lean();
-            const lighthouses = await Poi.find().distinct("name").lean();
-            const latitude = await Poi.find().distinct("latitude").lean();
+            const lighthouses = await Poi.aggregate([
+                { $group : { _id : "$county", pois: { $push: "$name" } } }
+                ]);
+            const coordinates = await Poi.find({},{ latitude: 1, longitude: 1}).lean();
             return h.view('poi', {
                 title: 'Welcome to Lighthouses',
-                counties: counties,
                 lighthouses: lighthouses,
-                latitude: latitude
+                coordinates: coordinates
             });
         }
-
     },
 
     showCreate: {
