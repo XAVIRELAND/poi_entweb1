@@ -1,3 +1,4 @@
+{{>mainmenu _id="poi"}}
 <section class="ui  raised segment">
     <section class="ui  raised segment">
         <div class="ui grid">
@@ -19,16 +20,8 @@
               {{/each}}
             </div>
             <div class="twelve wide yellow column">
-                {{>mainmenu _id="poi"}}
                 <div>
-                <body onload="initialize_map();
-
-                {{#each coordinates}}
-                    add_map_point({{this.latitude}}, {{this.longitude}})
-                {{/each}}">
-
-                <div id="map" style="width: auto; height: 100vh;"></div>
-                </body>
+                    <div id="mapid" style="width: auto; height: 100vh"></div>
             </div>
         </div>
         </div>

@@ -12,7 +12,9 @@ const Pois = {
             return h.view('poi', {
                 title: 'Welcome to Lighthouses',
                 lighthouses: lighthouses,
-                coordinates: coordinates
+                coordinates: coordinates,
+
+
             });
         }
     },
@@ -48,6 +50,7 @@ const Pois = {
                     longitude: data.longitude,
                     county: data.county,
                     description: data.description,
+                    url: data.url,
                     creator: user._id
                 });
                 await newPoi.save();

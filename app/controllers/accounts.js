@@ -62,6 +62,7 @@ const Accounts = {
         }
     },
 
+
     signup: {
         auth: false,
         validate: {
@@ -115,6 +116,18 @@ const Accounts = {
                 const id = request.auth.credentials.id;
                 const user = await User.findById(id).lean();
                 return h.view('settings', { title: 'Poi Settings', user: user });
+            } catch (err) {
+                return h.view('home', { errors: [{ message: err.message }] });
+            }
+        }
+    },
+
+    showGallery: {
+
+        handler: async function(request, h) {
+            try {
+
+                return h.view('gallery', { title: 'Gallery' });
             } catch (err) {
                 return h.view('home', { errors: [{ message: err.message }] });
             }
