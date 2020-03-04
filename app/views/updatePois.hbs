@@ -1,0 +1,45 @@
+{{>mainmenu _id="updatePois"}}
+
+<section class="ui inverted yellow  segment">
+    <div class="ui form">
+        <form action="/updatePois" method="POST">
+            <div class="ui two column grid">
+                <div class="column">
+                    <h2 class="ui dividing header">Update your POI</h2>
+                    <div class="field">
+                        <div class=" field">
+                            <label>Poi Name</label>
+                            <input type="text" placeholder="Poi Name" name="name">
+                        </div>
+                        <div class=" field">
+                            <label>Latitude</label>
+                            <input placeholder="Latitude" name="latitude">
+                        </div>
+                        <div class=" field">
+                            <label>Longitude</label>
+                            <input placeholder="Longitude" name="longitude">
+                        </div>
+                        <div class="eight wide field">
+                            <label>County</label>
+                            <input type="text" placeholder="County" name="county">
+                        </div>
+                        <div class="field" >
+                            <label>Description</label>
+                            <input type="text" placeholder="Description" name="description">
+                        </div>
+                        <div class="field" >
+                            <label>Image URL</label>
+                            <input type="text" placeholder="Image Url" name="url">
+                        </div>
+                        <button class="ui blue big submit button">Update Poi</button>
+                    </div>
+                </div>
+                <div class="left floated column" >
+                    <img src="images/lighthouse7.jpg" class="ui large image"/>
+                </div>
+            </div>
+        </form>
+        {{> error}}
+    </div>
+
+</section>

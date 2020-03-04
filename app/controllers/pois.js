@@ -1,6 +1,6 @@
 const Poi = require('../models/poi');
 const User = require('../models/user');
-
+const Joi = require('@hapi/joi');
 const Pois = {
     poi: {
         auth: false,
@@ -59,8 +59,54 @@ const Pois = {
                 return h.view('create', { errors: [{ message: err.message }] });
             }
         }
-    }
+    },
+    showUpdate: {
 
+        handler: async function(request, h) {
+            try {
+                return h.view('updatePois', { title: 'Poi Settings' });
+            } catch (err) {
+                return h.view('poi', { errors: [{ message: err.message }] });
+            }
+        }
+    },
+    updatePois: {
+
+        handler: async function (request, h) {
+            try {
+
+                const poiEdit = request.payload;
+                const pois = await Poi.find({});
+                pois.name = poiEdit.name;
+                pois.latitude = poiEdit.latitude;
+                pois.longitude = poiEdit.longitude;
+                pois.county = poiEdit.county;
+                pois.description = poiEdit.description;
+                pois.url = poiEdit.url;
+                await pois.save();
+
+                return h.redirect('/poireport');
+            } catch (err) {
+                return h.view('poi', {errors: [{message: err.message}]});
+            }
+        }
+    },
+
+
+    deletePois: {
+
+        handler: async function (request, h) {
+            try {
+
+                const pois = await Poi.find();
+                await pois.deleteOne({"name": pois.name});
+
+                return h.redirect('/poireport');
+            } catch (err) {
+                return h.view('poi', {errors: [{message: err.message}]});
+            }
+        }
+    }
 };
 
 module.exports = Pois;

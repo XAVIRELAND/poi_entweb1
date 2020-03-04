@@ -10,8 +10,9 @@ const Gallery = {
                 const allImages = await ImageStore.getAllImages();
                 return h.view('gallery', {
                     title: 'Cloudinary Gallery',
-                    images: allImages
+                    images: allImages,
                 });
+
             } catch (err) {
                 console.log(err);
             }

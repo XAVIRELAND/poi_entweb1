@@ -11,11 +11,16 @@ module.exports = [
     { method: 'GET', path: '/gallery', config: Accounts.showGallery },
     { method: 'GET', path: '/poireport', config: Pois.report },
     { method: 'GET', path: '/deleteimage/{id}', config: Gallery.deleteImage},
+    { method: 'GET', path: '/showUpdate', config: Pois.showUpdate },
+//    { method: 'GET', path: '/updatePois', config: Pois.updatePois},
     { method: 'POST', path: '/login', config: Accounts.login },
     { method: 'POST', path: '/signup', config: Accounts.signup },
     { method: 'POST', path: '/create', config: Pois.create },
     { method: 'POST', path: '/uploadfile', config: Gallery.uploadFile },
     { method: 'POST', path: '/settings', config: Accounts.updateSettings },
+    { method: 'POST', path: '/updatePois', config: Pois.updatePois},
+    { method: 'GET', path: '/deletePois/:id', config: Pois.deletePois },
+
 
     {
         method: 'GET',
