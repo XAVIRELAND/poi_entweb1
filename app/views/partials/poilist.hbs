@@ -6,7 +6,6 @@
                     <th>Latitude</th>
                     <th>Longitude</th>
                     <th>County</th>
-                    <th>Description</th>
                     <th>Image</th>
                     <th>Creator</th>
                 </tr>
@@ -18,12 +17,14 @@
                         <td> {{latitude}} </td>
                         <td> {{longitude}}</td>
                         <td> {{county}}</td>
-                        <td>{{description}}</td>
                         <td><img src="{{url}}"style="height:100px;width:150px;"></img></td>
                         <td> {{creator.firstName}} {{creator.lastName}} </td>
                         <td>
                             <a href="/deletePois/{{_id}}" class="ui red icon button">
                                 <i class="icon trash"></i>
+                            </a>
+                            <a href="/showUpdate/{{_id}}" class="ui green icon button">
+                                <i class="icon redo"></i>
                             </a>
                         </td>
                     </tr>

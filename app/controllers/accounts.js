@@ -122,17 +122,6 @@ const Accounts = {
         }
     },
 
-    showGallery: {
-
-        handler: async function(request, h) {
-            try {
-
-                return h.view('gallery', { title: 'Gallery' });
-            } catch (err) {
-                return h.view('home', { errors: [{ message: err.message }] });
-            }
-        }
-    },
         updateSettings: {
             validate: {
                 payload: {

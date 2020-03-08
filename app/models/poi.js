@@ -8,8 +8,12 @@ const poiSchema = new Schema({
     latitude: Number,
     longitude: Number,
     county: String,
-    description: String,
+    year: Number,
+    height: Number,
+    focalHeight: Number,
+    range: Number,
     url: String,
+    info: String,
     creator: {
         type: Schema.Types.ObjectId,
         ref: 'User'

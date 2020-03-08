@@ -9,33 +9,49 @@
                     <div class="field">
                         <div class=" field">
                             <label>Poi Name</label>
-                            <input type="text" placeholder="Poi Name" name="name">
+                            <input value="{{pois.name}}" type="text"  name="name">
                         </div>
                         <div class=" field">
                             <label>Latitude</label>
-                            <input placeholder="Latitude" name="latitude">
+                            <input value="{{pois.latitude}}"type="text" name="latitude">
                         </div>
                         <div class=" field">
                             <label>Longitude</label>
-                            <input placeholder="Longitude" name="longitude">
+                            <input value="{{pois.longitude}}" type="text" name="longitude">
                         </div>
                         <div class="eight wide field">
                             <label>County</label>
-                            <input type="text" placeholder="County" name="county">
-                        </div>
-                        <div class="field" >
-                            <label>Description</label>
-                            <input type="text" placeholder="Description" name="description">
+                            <input value="{{pois.county}}" va type="text"  name="county">
                         </div>
                         <div class="field" >
                             <label>Image URL</label>
-                            <input type="text" placeholder="Image Url" name="url">
+                            <input value="{{pois.url}}" type="url"  name="url">
                         </div>
                         <button class="ui blue big submit button">Update Poi</button>
                     </div>
                 </div>
                 <div class="left floated column" >
-                    <img src="images/lighthouse7.jpg" class="ui large image"/>
+                    <h2>Description</h2>
+                    <div class="field" >
+                        <label>Year built</label>
+                        <input value="{{pois.year}}" type="text" name="year"></input>
+                    </div>
+                    <div class="field" >
+                        <label>Tower height</label>
+                        <input value="{{pois.height}}"type="text" name="height"></input>
+                    </div>
+                    <div class="field" >
+                        <label>Focal height</label>
+                        <input value="{{pois.focalHeight}}" type="text" name="focalHeight"></input>
+                    </div>
+                    <div class="field" >
+                        <label>Range</label>
+                        <input value="{{pois.range}}"type="text" name="range"></input>
+                    </div>
+                    <div class="field" >
+                        <label>Info</label>
+                        <input value="{{pois.info}}"type="text" name="info"></input>
+                    </div>
                 </div>
             </div>
         </form>

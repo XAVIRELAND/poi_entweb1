@@ -23,20 +23,36 @@
                 <input type="text" placeholder="County" name="county">
             </div>
             <div class="field" >
-                <label>Description</label>
-                <textarea type="text" name="description"></textarea>
-            </div>
-            <div class="field" >
                 <label>Image URL</label>
-                <textarea type="text" name="url"></textarea>
+                <input type="text" name="url">
             </div>
             <button class="ui blue big submit button">Create Poi</button>
-        </div>
-            </div>
-            <div class="left floated column" >
-                <img src="images/lighthouse7.jpg" class="ui large image"/>
             </div>
         </div>
+       <div class="left floated column" >
+           <h2>Description</h2>
+            <div class="field" >
+                <label>Year built</label>
+                <input type="text" name="year">
+            </div>
+            <div class="field" >
+                <label>Tower height</label>
+                <input type="text" name="height">
+            </div>
+            <div class="field" >
+                <label>Focal height</label>
+                <input type="text" name="focalHeight">
+            </div>
+            <div class="field" >
+                <label>Range</label>
+                <input type="text" name="range">
+            </div>
+           <div class="field" >
+               <label>Info</label>
+               <input type="text" name="info">
+           </div>
+        </div>
+            </div>
         </form>
         {{> error}}
     </div>

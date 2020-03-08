@@ -1,19 +1,20 @@
+{{>mainmenu _id="gallery"}}
+<section class="ui segment">
 
-<section class="ui container">
+<h1 class="ui header">Cloudinary Gallery</h1>
 
-<h1 class="uk-heading-primary">Cloudinary Gallery</h1>
-
-<div class="uk-child-width-1-2@m uk-grid-small uk-grid-match" uk-grid>
+<div class="ui segment" uk-grid>
     <div>
         {{> upload }}
     </div>
 </div>
 
-<div class="uk-container uk-padding-small">
-    <div class="uk-child-width-1-4@s uk-flex uk-flex-center" uk-grid uk-height-match="target: .uk-card">
+<div class="ui container">
+    <div class="ui grid">
         {{#each images}}
-            {{> card}}
+           {{> card}}
         {{/each}}
+
     </div>
 </div>
 </section>
