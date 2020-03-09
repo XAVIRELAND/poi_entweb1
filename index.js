@@ -1,7 +1,20 @@
 'use strict';
-
+const ImageStore = require('./app/utils/image-store');
 const Hapi = require('@hapi/hapi');
-require('dotenv').config();
+
+const dotenv = require('dotenv');
+
+const result = dotenv.config();
+if (result.error) {
+    console.log(result.error.message);
+    process.exit(1);
+}
+const credentials = {
+    cloud_name: process.env.name,
+    api_key: process.env.api_key,
+    api_secret: process.env.api_secret
+};
+
 
 const server = Hapi.server({
     port: 3000,
@@ -12,7 +25,20 @@ async function init() {
     await server.register(require('@hapi/inert'));
     await server.register(require('@hapi/vision'));
     await server.register(require('@hapi/cookie'));
-    server.validator(require('@hapi/joi'))
+
+    server.validator(require('@hapi/joi'));
+
+    server.auth.strategy('session', 'cookie', {
+        cookie: {
+            name: process.env.cookie_name,
+            password: process.env.cookie_password,
+            isSecure: false
+        },
+        redirectTo: '/'
+    });
+
+    server.auth.default('session');
+    ImageStore.configure(credentials);
     server.views({
         engines: {
             hbs: require('handlebars')
@@ -24,15 +50,8 @@ async function init() {
         layout: true,
         isCached: false
     });
-    server.auth.strategy('session', 'cookie', {
-            cookie: {
-                name: process.env.cookie_name,
-                password: process.env.cookie_password,
-                isSecure: false
-            },
-    });
 
-    server.auth.default('session');
+
     server.route(require('./routes'));
     await server.start();
     console.log(`Server running at: ${server.info.uri}`);
