@@ -1,0 +1,32 @@
+{{>mainmenu _id="home"}}
+<section class="ui  raised segment">
+    <section class="ui  raised segment">
+        <div class="ui grid">
+            <div class="four wide yellow column">
+                <h2 class="ui header">Irish Lighthouses</h2>
+                {{#each lighthouses}}
+                    <div class="ui inverted vertical dropdown menu">
+                        Co.{{this._id}}
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            {{#each this.pois}}
+                                <a class="item" onclick="zoom_in_map({{this.latitude}}, {{this.longitude}})" href="#">{{this.name}}</a>
+                            {{/each}}
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+            <div class="twelve wide yellow column">
+                <div id='mapid' style="width: auto; height: 100vh"></div>
+
+                <body onload="initialize_map();
+                    {{#each coordinates}}
+                    add_map_point({{this.latitude}}, {{this.longitude}},'{{this.url}}','{{this.year}}','{{this.height}}'
+                            ,'{{this.focalHeight}}','{{this.range}}','{{this.info}}')
+                {{/each}}">
+
+                </body>
+            </div>
+        </div>
+    </section>
+</section>

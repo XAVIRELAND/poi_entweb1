@@ -43,24 +43,24 @@
         }).addTo(mymap);
     }
 
-    function add_map_point(lat, lng, name, year,height,focalHeight,range,url,info) {
-        var marker =L.marker([lat,lng],).addTo(mymap);
+    function add_map_point(latitude, longitude,url, year,height,focalHeight,range,info) {
 
-        box = "<b>"+name+"</b><br><hr>"+
+        var marker =L.marker([latitude,longitude]).addTo(mymap);
+
+
+        box="<b>Lat."+latitude+", Long."+longitude+"</b><br><hr>"+
                 '<img src="'+url+'" >' +
-                "<b> Year :</b> "+year+
+                "<br> Year :"+year+
                 "<br><b> TowerHeight :</b> "+height+'m.'+
                 "<br><b> Focal height :</b>" +focalHeight+'m.'+
                 "<br><b> Range :</b> "+range+'nmi.'+
-                "<br>" +'<a href="'+info+'">link text</a>';
-
+                "<br>" +'<a href="'+info+'">more info</a>';
         marker.bindPopup(box).openPopup();
     }
 
-    function zoom_in_map(lat, lng) {
-        mymap.setView([lat, lng], 12)
+    function zoom_in_map(latitude, longitude) {
+        mymap.setView([latitude, longitude], 12)
     }
 
 </script>
-</body>
-</html>
+

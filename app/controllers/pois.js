@@ -80,8 +80,8 @@ const Pois = {
         handler: async function(request, h) {
             try {
                 const poisEdit = request.payload;
-                const id = request.params._id;
-                const pois = await Poi.findById({id});
+                const name = request.params;
+                const pois = await Poi.findById({name: name});
                 pois.name = poisEdit.name;
                 pois.latitude = poisEdit.latitude;
                 pois.longitude = poisEdit.longitude;

@@ -19,5 +19,9 @@ const poiSchema = new Schema({
         ref: 'User'
     }
 });
+poiSchema.statics.findById = function(_id) {
+    return this.findOne({ _id : _id});
+};
+
 
 module.exports = Mongoose.model('poi', poiSchema);
