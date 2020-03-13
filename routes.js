@@ -18,7 +18,7 @@ module.exports = [
     { method: 'POST', path: '/create', config: Pois.create },
     { method: 'POST', path: '/uploadfile', config: Gallery.uploadFile },
     { method: 'POST', path: '/settings', config: Accounts.updateSettings },
-    { method: 'POST', path: '/updatePois', config: Pois.updatePois},
+    { method: 'POST', path: '/updatePois/{id}', config: Pois.updatePois},
     { method: 'GET', path: '/deletePois/{_id}', config: Pois.deletePois },
 
 
