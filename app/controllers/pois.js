@@ -80,21 +80,10 @@ const Pois = {
         handler: async function(request, h) {
             try {
                 const poisEdit = request.payload;
-                const id = request.payload.name;
-                const pois = await Poi.find({name:id});
-                pois.name = poisEdit.name;
-                pois.latitude = poisEdit.latitude;
-                pois.longitude = poisEdit.longitude;
-                pois.county = poisEdit.county;
-                pois.url = poisEdit.url;
-                pois.year = poisEdit.year;
-                pois.height = poisEdit.height;
-                pois.focalHeight = poisEdit.focalHeight;
-                pois.range = poisEdit.range;
-                pois.info = poisEdit.info;
-
-                await pois.save();
-                return h.redirect('/updatePois');
+                const user = await User.findById(request.auth.credentials.id)
+                poisEdit['creator'] = user._id;
+                await Poi.replaceOne({"_id": request.params._id}, poisEdit);
+                return h.redirect('/poireport');
             } catch (err) {
                 return h.view('updatePois', { errors: [{ message: err.message }] });
             }
